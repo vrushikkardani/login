@@ -1,0 +1,1134 @@
+{
+	"info": {
+		"_postman_id": "a784e0ab-fc00-447e-9dce-5ff36b16585f",
+		"name": "WOW",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25481185"
+	},
+	"item": [
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"wow_admin@mailinator.com\",\r\n    \"password\":\"admin@123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/admin/login",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"admin",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Users",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwZjY2NDRmZmEyOTQzMzBjMWE0NDA0MCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTYyNjc2MTU5OSwiZXhwIjoxNjI5MzUzNTk5fQ.1GpDvfwDP8MS7Ye5FZ56CUz2qhyUReM33k9iEYVk-v4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "type",
+									"value": "landlord",
+									"description": "\"landlord\", \"tenant\"",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{local}}/users/list",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"users",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User Status",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwYzczM2JiMTM2NjM4NjM0MGM2NWJmMSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTYyMzgyODAyNywiZXhwIjoxNjI2NDIwMDI3fQ.iwmkHHEtzFDAsySzVU9ku6DeN1rYIxTyjOvkV6UXJhs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "status",
+									"value": "verified",
+									"description": "\"verified\", \"deactivated\"",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{dev}}/admin/change-user-status/60c98d8d73fd922a8fa43282",
+							"host": [
+								"{{dev}}"
+							],
+							"path": [
+								"admin",
+								"change-user-status",
+								"60c98d8d73fd922a8fa43282"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "cbhavesh008@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "first_name",
+									"value": "bhavesh",
+									"type": "text"
+								},
+								{
+									"key": "last_name",
+									"value": "c",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "admin@123",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/home/bhavesh/Pictures/download.png"
+								},
+								{
+									"key": "phone_number",
+									"value": "+919874563211",
+									"type": "text"
+								},
+								{
+									"key": "dob",
+									"value": "13/07/2021",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{local}}/users/register",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"users",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"cbhavesh008@gmail.com\",\r\n    \"password\":\"admin@123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/users/login",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Resend-verification-link",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"wow_admin@mailinator.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/users/resend-verification-otp",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"users",
+								"resend-verification-otp"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Verify-user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"cbhavesh008@gmail.com\",\r\n    \"otp\":1234\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/users/verify-user",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"users",
+								"verify-user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "forgot-password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"phone_number\":\"+919824437089\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/users/forgot-password",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"users",
+								"forgot-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "reset-password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":\"60c734261366386340c65bf2\",\r\n    \"new_password\":\"devstree\",\r\n    \"confirm_password\":\"devstree\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/users/reset-password",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"users",
+								"reset-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "change-password",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwYzczNDI2MTM2NjM4NjM0MGM2NWJmMiIsInJvbGUiOiJsYW5kbG9yZCIsImlhdCI6MTYyMzY2NzgzOSwiZXhwIjoxNjI2MjU5ODM5fQ.wbfTgkJcmBxHRWLWhlZfW-KEeIYV7ha3FXVlHyuosrQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"old_password\":\"devstree\",\r\n    \"new_password\":\"devstree\",\r\n    \"confirm_password\":\"devstree\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/users/change-password",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"users",
+								"change-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwYzA0ZGEwM2EwZjJkM2Y2NGE5MmQ1ZiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTYyMzIxNjA1NywiZXhwIjoxNjI1ODA4MDU3fQ.fxQiW_IkQ0hn14Y7g09KMC9suXy7fgN6ZJ-3JnhBOpQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "first_name",
+									"value": "Test",
+									"type": "text"
+								},
+								{
+									"key": "last_name",
+									"value": "Test",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": []
+								}
+							]
+						},
+						"url": {
+							"raw": "{{local}}/users/update",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"users",
+								"update"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Term and conditions",
+			"item": [
+				{
+					"name": "Edit",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwZjY2NDRmZmEyOTQzMzBjMWE0NDA0MCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTYyNjc4MTQ1MCwiZXhwIjoxNjI5MzczNDUwfQ.b4mA7HR-8QoPhGbrVYzImyVYH_1YPSl5RKsEuvToC3U",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "content",
+									"value": "fgrwrg",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{local}}/term-conditions/update/60f6a0caaf3eb3497584fa5b",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"term-conditions",
+								"update",
+								"60f6a0caaf3eb3497584fa5b"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwN2VjNTllMDU0OGI2NGU0ODM3Njc5OSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTYxODkyMDkxNSwiZXhwIjoxNjIxNTEyOTE1fQ.rxRLbMilFPGt13_Rrzi_MPW6YJS8aDRKc47T3WC6M2Y",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "{{local}}/term-conditions/get",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"term-conditions",
+								"get"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Privacy and policies",
+			"item": [
+				{
+					"name": "Edit",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwZjY2NDRmZmEyOTQzMzBjMWE0NDA0MCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTYyNjc4MTQ1MCwiZXhwIjoxNjI5MzczNDUwfQ.b4mA7HR-8QoPhGbrVYzImyVYH_1YPSl5RKsEuvToC3U",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "content",
+									"value": "sfdbwbweb",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{local}}/privacy-policy/update/60f6c964e1b71ab30e6b4035",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"privacy-policy",
+								"update",
+								"60f6c964e1b71ab30e6b4035"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwN2VjNTllMDU0OGI2NGU0ODM3Njc5OSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTYxODkyMDkxNSwiZXhwIjoxNjIxNTEyOTE1fQ.rxRLbMilFPGt13_Rrzi_MPW6YJS8aDRKc47T3WC6M2Y",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "{{local}}/privacy-policy/get",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"privacy-policy",
+								"get"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Contact us",
+			"item": [
+				{
+					"name": "Send",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwZjY2NDRmZmEyOTQzMzBjMWE0NDA0MCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTYyNjc4MTQ1MCwiZXhwIjoxNjI5MzczNDUwfQ.b4mA7HR-8QoPhGbrVYzImyVYH_1YPSl5RKsEuvToC3U",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "subject",
+									"value": "kem se",
+									"type": "text"
+								},
+								{
+									"key": "message",
+									"value": "sfgrgwrg",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{local}}/users/contact-us",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"users",
+								"contact-us"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Help & FAQ",
+			"item": [
+				{
+					"name": "Add",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwZjY2NDRmZmEyOTQzMzBjMWE0NDA0MCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTYyNjc4MTQ1MCwiZXhwIjoxNjI5MzczNDUwfQ.b4mA7HR-8QoPhGbrVYzImyVYH_1YPSl5RKsEuvToC3U",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "question",
+									"value": "Who is PM?",
+									"type": "text"
+								},
+								{
+									"key": "answer",
+									"value": "Mo-D",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{local}}/faq",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"faq"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwZjY2NDRmZmEyOTQzMzBjMWE0NDA0MCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTYyNjc4MTQ1MCwiZXhwIjoxNjI5MzczNDUwfQ.b4mA7HR-8QoPhGbrVYzImyVYH_1YPSl5RKsEuvToC3U",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "question",
+									"value": "sfdbwbweb",
+									"type": "text"
+								},
+								{
+									"key": "answer",
+									"value": "test",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{local}}/faq/60f6d3477b3999c3ac482240",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"faq",
+								"60f6d3477b3999c3ac482240"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwZjY2NDRmZmEyOTQzMzBjMWE0NDA0MCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTYyNjc4MTQ1MCwiZXhwIjoxNjI5MzczNDUwfQ.b4mA7HR-8QoPhGbrVYzImyVYH_1YPSl5RKsEuvToC3U",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "question",
+									"value": "sfdbwbweb",
+									"type": "text"
+								},
+								{
+									"key": "answer",
+									"value": "test",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{local}}/faq/60f6d3477b3999c3ac482240",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"faq",
+								"60f6d3477b3999c3ac482240"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwN2VjNTllMDU0OGI2NGU0ODM3Njc5OSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTYxODkyMDkxNSwiZXhwIjoxNjIxNTEyOTE1fQ.rxRLbMilFPGt13_Rrzi_MPW6YJS8aDRKc47T3WC6M2Y",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "{{local}}/faq",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"faq"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Rules & Regulations",
+			"item": [
+				{
+					"name": "Add",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwZjY2NDRmZmEyOTQzMzBjMWE0NDA0MCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTYyNjc4MTQ1MCwiZXhwIjoxNjI5MzczNDUwfQ.b4mA7HR-8QoPhGbrVYzImyVYH_1YPSl5RKsEuvToC3U",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "game",
+									"value": "NEPT",
+									"description": "[\"NEPT\",\"WOW\",\"SUPER WOW\"]",
+									"type": "text"
+								},
+								{
+									"key": "rules_regulations",
+									"value": "ssfggrwg",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{local}}/rules-ragulations",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"rules-ragulations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwZjY2NDRmZmEyOTQzMzBjMWE0NDA0MCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTYyNjc4MTQ1MCwiZXhwIjoxNjI5MzczNDUwfQ.b4mA7HR-8QoPhGbrVYzImyVYH_1YPSl5RKsEuvToC3U",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "game",
+									"value": "NEPT",
+									"type": "text"
+								},
+								{
+									"key": "rules_regulations",
+									"value": "ssfggrwg1111",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{local}}/rules-ragulations/60f7b2e6eee9c216eaecd875",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"rules-ragulations",
+								"60f7b2e6eee9c216eaecd875"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwZjY2NDRmZmEyOTQzMzBjMWE0NDA0MCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTYyNjc4MTQ1MCwiZXhwIjoxNjI5MzczNDUwfQ.b4mA7HR-8QoPhGbrVYzImyVYH_1YPSl5RKsEuvToC3U",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "question",
+									"value": "sfdbwbweb",
+									"type": "text"
+								},
+								{
+									"key": "answer",
+									"value": "test",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{local}}/rules-ragulations/60f7b2e6eee9c216eaecd875",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"rules-ragulations",
+								"60f7b2e6eee9c216eaecd875"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwN2VjNTllMDU0OGI2NGU0ODM3Njc5OSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTYxODkyMDkxNSwiZXhwIjoxNjIxNTEyOTE1fQ.rxRLbMilFPGt13_Rrzi_MPW6YJS8aDRKc47T3WC6M2Y",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "{{local}}/rules-ragulations",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"rules-ragulations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get by id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwN2VjNTllMDU0OGI2NGU0ODM3Njc5OSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTYxODkyMDkxNSwiZXhwIjoxNjIxNTEyOTE1fQ.rxRLbMilFPGt13_Rrzi_MPW6YJS8aDRKc47T3WC6M2Y",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "{{local}}/rules-ragulations/60f7b2e6eee9c216eaecd875",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"rules-ragulations",
+								"60f7b2e6eee9c216eaecd875"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "local",
+			"value": "http://127.0.0.1:3647/api"
+		},
+		{
+			"key": "dev",
+			"value": "http://172.105.35.50:3647/api"
+		}
+	]
+}
